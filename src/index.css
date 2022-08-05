@@ -1,0 +1,10 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/inter.css);
+@import url(./components/App/App.css);
+@import url(./components/Navigation/Navigation.css);
+@import url(./components/Main/Main.css);
+@import url(./components/Card/Card.css);
+@import url(./components/Loading/Loading.css);
+@import url(./components/PopupDel/PopupDel.css);
+@import url(./components/Statistic/Statistic.css);
+@import url(./components/Login/Login.css);

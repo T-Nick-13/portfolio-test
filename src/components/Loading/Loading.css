@@ -1,0 +1,172 @@
+.form {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 7%;
+  width: 250px;
+  height: 250px;
+  background: rgb(1 1 1 / 15%);
+  border-radius: 10px;
+  outline: 2px dashed rgb(1 1 1 / 30%);
+  outline-offset: -7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.3s;
+  animation: slidin 0.3s;
+}
+
+.form_dragover {
+  background: rgb(182 182 182 / 15%);
+}
+
+.form__image {
+  width: 40%;
+  margin-bottom: 15px;
+}
+
+.form__input {
+  display: none;
+}
+
+.form__label {
+  font-weight: 800;
+}
+
+.form__label:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.form__container {
+  position: absolute;
+  top: 107%;
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.form__sketch {
+  position: relative;
+  width: 200px;
+}
+
+.form__img {
+  width: 100%;
+  height: 100px;
+  display: block;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.form__overlay {
+  background: rgba(1,1,1,0.4);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+}
+
+.form__overlay > input {
+  margin-bottom: 5px;
+}
+
+.form__sketch-input {
+  background: rgb(255 255 255 / 72%);
+  width: 80%;
+  height: 20%;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.form__sketch-input::placeholder {
+  color: #000;
+}
+
+.form__btn {
+  border: none;
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 4px 10px;
+  background-color: rgb(147 147 147);
+  font-size: 15px;
+  transition: all 0.3s;
+  opacity: 0.3;
+}
+
+.form__btn_active {
+  opacity: 1;
+}
+
+.form__btn:hover {
+  cursor: not-allowed;
+}
+
+.form__btn_active:hover {
+  background-color: rgb(147 147 147 /60%);
+  cursor: pointer;
+}
+
+.form__validation {
+  width: 20px;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  transition: all 0.3s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.form__validation_active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* @media (max-width: 884px) {
+  .form {
+    left: 40%;
+  }
+} */
+
+
+@keyframes slidin {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 7%;
+  }
+}
+
+@media (max-width: 580px) {
+  .form {
+    top: 14%;
+    /* left: 30%; */
+    width: 200px;
+    height: 200px;
+  }
+
+  .form__label {
+    font-size: 15px;
+  }
+
+  .form__span {
+    font-size: 14px;
+  }
+
+  .form_inactive {
+    top: -100%;
+    visibility: hidden;
+  }
+
+}

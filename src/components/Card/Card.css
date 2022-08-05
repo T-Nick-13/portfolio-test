@@ -1,0 +1,90 @@
+.card {
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.card_rating {
+  width: 300px;
+}
+
+/* .card:hover .card__overlay {
+  opacity: 0.3;
+} */
+
+.card:hover .card__tag{
+  opacity: 1;
+}
+
+.card__overlay {
+  position: absolute;
+  opacity: 0;
+  background-color: #000;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: 0.3s all linear;
+}
+
+.card__overlay:hover {
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.card__overlay_inactive {
+  display: none;
+}
+
+.card__overlay_selected {
+  opacity: 1;
+  background-color: rgb(140 140 140 / 70%);
+}
+
+.card__overlay_rating {
+  opacity: 1;
+  background: linear-gradient(to right, rgb(43 42 42 / 79%), rgb(0 0 0 / 14%));
+  border-radius: 10px;
+}
+
+.card:hover .card__overlay_selected {
+  opacity: 0.7;
+}
+
+.card__img {
+  width: 100%;
+  display: block;
+}
+
+.card__img_rating {
+  border-radius: 10px;
+}
+
+.card__tag {
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  font-size: 18px;
+  line-height: 1.7;
+  transition: 0.3s all linear;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(to top, rgb(0,0,0, 0.7), transparent);
+  width: 100%;
+  margin: 0;
+}
+
+.card__tag:hover {
+  text-decoration: underline;
+}
+
+.card__selected {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 25px;
+  visibility: hidden;
+}
+
+.card__selected_active {
+  visibility: visible;
+}

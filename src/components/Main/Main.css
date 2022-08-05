@@ -1,0 +1,149 @@
+.main {
+  column-count: 3;
+  column-gap: 4px;
+  max-width: 1280px;
+  min-height: 66vh;
+  width: 100%;
+  padding: 10px 3px 5px;
+  margin-top: 0;
+  position: relative;
+  transition: all 0.3s;
+  animation: widen 0.3s;
+}
+
+.filter__btn {
+  position: fixed;
+  z-index: 5;
+  margin: 0;
+  background-color: rgb(35 35 35 / 70%);
+  color: white;
+  border-radius: 10px;
+  font-size: 13px;
+  transform: translate(-50%);
+  top: 18%;
+  left: 50%;
+  padding: 6px;
+  cursor: pointer;
+  display: none;
+}
+
+.filter__btn:hover {
+  background-color: rgb(35 35 35 / 90%);
+}
+
+.filter__btn_active {
+  display: block;
+}
+
+.deleting {
+  position: fixed;
+  width: 100%;
+  height: 1px;
+  background: rgb(1 1 1 / 65%);
+  top: 0;
+  /* left: 0; */
+  z-index: 1;
+  box-shadow: 97px 30px 40px 107px rgb(1 1 1 / 65%);
+  transition: all 0.5s;
+}
+
+.deleting_inactive {
+  top: -100%;
+  visibility: hidden;
+}
+
+.deleting__container {
+  min-height: 80px;
+  min-width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  /* top: 25px; */
+}
+
+.deleting__btn {
+  border: none;
+  background: rgb(24 24 24);
+  color: #fff;
+  font-weight: normal;
+  font-size: 14px;
+  width: 90px;
+  height: 30px;
+  border-radius: 20px;
+  padding: 0;
+  transition: background 0.3s;
+  margin-left: 7%;
+}
+
+.deleting__btn:hover {
+  cursor: pointer;
+  background: rgb(104, 104, 104);
+}
+
+.deleting__counter {
+  color: #fff;
+  margin: 0 0 0 7%;
+  min-width: 167px;
+}
+
+.deleting__counter_inactive {
+  visibility: hidden;
+}
+
+.deleting__bin {
+  width: 25px;
+  margin-left: 7%;
+  transition: opacity 0.3s;
+}
+
+.deleting__bin:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.deleting__bin_inactive {
+  visibility: hidden;
+}
+
+@keyframes widen {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@media (max-width: 884px) {
+  .main {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 580px) {
+  .main {
+    column-count: 1;
+    width: 95vw;
+    padding: 0;
+    margin: 10px 0 10px;
+  }
+
+  /* .main_shift {
+    margin-top: 255px;
+  } */
+
+  .deleting {
+    top: 171px;
+    box-shadow: 0px -23px 50px 86px rgb(1 1 1 / 65%);
+  }
+
+  .deleting__container {
+    top: -100px;
+  }
+
+  .deleting_inactive {
+    top: -100%;
+    visibility: hidden;
+  }
+
+}
