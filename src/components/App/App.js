@@ -109,15 +109,9 @@ function App() {
       return c._id;
     })
 
-    api.deleteCard(delCard)
-      .then(() => {
-        const newCards = cardsList.filter(c => !delCard.includes(c._id));
-        setCardsList(newCards);
-        setDeletingActive(false);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
+    const newCards = cardsList.filter(c => !delCard.includes(c._id));
+    setCardsList(newCards);
+    setDeletingActive(false);
   }
 
   function handleLogin(data) {
@@ -155,31 +149,13 @@ function App() {
     }
   }
 
-  function addNewCard(fileArr, nameSet, tagSet) {
-
-    const data = new FormData();
-
-    fileArr.forEach((f) => {
-      data.append('link', f);
+  function addNewCard(objectURL) {
+    const newCard = objectURL.map((c) => {
+      return {name: 'card', link: c, _id: c}
     })
-
-    nameSet.forEach((f) => {
-      data.append('name', f);
-    })
-
-    tagSet.forEach((f) => {
-      data.append('tag', f);
-    })
-
-    api.saveCard(data)
-      .then((m) => {
-        setCardsList([...m, ...cardsList]);
-        setDeletingActive(false);
-        navigate('/');
-    })
-      .catch((err) => {
-      console.log(err)
-      })
+    setCardsList([...newCard, ...cardsList]);
+    setDeletingActive(false);
+    navigate('/');
   }
 
   React.useEffect(() => {

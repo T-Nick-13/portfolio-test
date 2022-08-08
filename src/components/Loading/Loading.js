@@ -42,7 +42,6 @@ function Loading(props) {
       } else alert(`Неподходящий формат файла (${file.type}). Используйте jpeg, jpg, png, svg`);
   }
 
-
   function handleLoadingInput(e) {
     let files = e.target.files;
     Array.from(files).forEach((file) => {
@@ -74,7 +73,7 @@ function Loading(props) {
   function submit(e) {
     e.preventDefault();
     if(isValid) {
-      props.addNewCard(fileSet, nameSet, tagSet);
+      props.addNewCard(objectURL);
       setObjectURL([]);
       urlSet.clear();
       fileSet = [];
